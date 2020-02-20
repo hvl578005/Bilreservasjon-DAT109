@@ -1,5 +1,13 @@
 package no.hvl.dat109;
 
+/**
+ * 
+ * @author KathrineH
+ * 
+ * Her lages det bil objekter.
+ *
+ */
+
 public class Bil {
 	
 	private int id;
@@ -9,8 +17,21 @@ public class Bil {
 	private String farge;
 	private Utleiegruppe utleiegruppe;
 	private boolean ledig;
+	private int kmavstand;
 	
-	public Bil(int id, String regnr, String bilmerke, String modell, String farge, Utleiegruppe utleiegruppe, boolean ledig) {
+	/**
+	 * 
+	 * @param id
+	 * @param regnr
+	 * @param bilmerke
+	 * @param modell
+	 * @param farge
+	 * @param utleiegruppe
+	 * @param ledig
+	 * @param kmavstand
+	 */
+	
+	public Bil(int id, String regnr, String bilmerke, String modell, String farge, Utleiegruppe utleiegruppe, boolean ledig, int kmavstand) {
 		this.id = id;
 		this.regnr = regnr;
 		this.bilmerke = bilmerke;
@@ -18,12 +39,21 @@ public class Bil {
 		this.farge = farge;
 		this.utleiegruppe = utleiegruppe;
 		this.ledig = true;
+		this.kmavstand = kmavstand;
 	}
 	
 	public Bil() {
 		
 	}
 	
+	public int getKmavstand() {
+		return kmavstand;
+	}
+
+	public void setKmavstand(int kmavstand) {
+		this.kmavstand = kmavstand;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -86,6 +116,12 @@ public class Bil {
 				+ ", utleiegruppe=" + utleiegruppe + "\n";
 	}
 	
+	public String toStringKm() {
+		return "Kilometeravstand: " + kmavstand + " km.";
+	}
 	
+	public String toStringkmNy() {
+		return "Ny kilometeravstand: " + kmavstand + " km.";
+	}
 	
 }

@@ -1,5 +1,17 @@
 package no.hvl.dat109;
 
+/**
+ * 
+ * @author KathrineH
+ * 
+ * Denne klassen sørger for at bilselskapet og hver kunde og kontor
+ * får en adresse bestående av gate adresse, post nr og sted.
+ * Kontor og selskap bruker enum til Sted siden det finnes kun 5 kontorer,
+ * men kunder kan være fra overalt i Norge så de bruker en annen konstruktør
+ * der sted er en String
+ *
+ */
+
 public class Adresse {
 	
 	private String gateAdresse;
@@ -7,17 +19,35 @@ public class Adresse {
 	private Sted sted;
 	private String kundeSted;
 	
+	/**
+	 * 
+	 * @param gateAdresse
+	 * @param postnr
+	 * @param sted
+	 */
+	
 	public Adresse (String gateAdresse, String postnr, Sted sted) {
 		this.gateAdresse = gateAdresse;
 		this.postnr = postnr;
 		this.sted = sted;
 	}
 	
+	/**
+	 * 
+	 * @param gateAdresse
+	 * @param postnr
+	 * @param kundeSted
+	 */
+	
 	public Adresse (String gateAdresse, String postnr, String kundeSted) {
 		this.gateAdresse = gateAdresse;
 		this.postnr = postnr;
 		this.kundeSted = kundeSted;
 	}
+
+	/**
+	 * 
+	 */
 	
 	public Adresse() {
 		
@@ -61,9 +91,5 @@ public class Adresse {
 	public String toString() {
 		return "Adresse: " + gateAdresse + " " + postnr + " " + kundeSted + ".";
 	}
-	
-	
-	
-	
 	
 }

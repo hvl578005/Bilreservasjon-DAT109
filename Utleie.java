@@ -1,23 +1,42 @@
 package no.hvl.dat109;
 
+/**
+ * 
+ * @author KathrineH
+ * klassen for å fullføre reservasjonen. her betaler man med kredittkort
+ *
+ */
+
 public class Utleie {
 	
-	String kredittkort;
-	String registreringsnummer;
-	int kmavstand;
-	String dato;
-	String kl;
-	String dator;
-	String klr;
+	private String kredittkort;
+	private String registreringsnummer;
+	private int kmavstand;
+	private String dato;
+	private String kl;
+	private int dager;
 	
-	public Utleie (String kredittkort, String registreringsnummer, int kmavstand, String dato, String kl, String dator, String klr) {
+	/**
+	 * 
+	 * @param kredittkort
+	 * @param registreringsnummer
+	 * @param kmavstand
+	 * @param dato
+	 * @param kl
+	 * @param dager
+	 */
+	
+	public Utleie (String kredittkort, String registreringsnummer, int kmavstand, String dato, String kl, int dager) {
 		this.kredittkort = kredittkort;
 		this.registreringsnummer = registreringsnummer;
 		this.kmavstand = kmavstand;
 		this.dato = dato;
 		this.kl = kl;
-		this.dator = dator;
-		this.klr = klr;
+		this.dager = dager;
+	}
+	
+	public Utleie () {
+		
 	}
 
 	public String getKredittkort() {
@@ -60,21 +79,24 @@ public class Utleie {
 		this.kl = kl;
 	}
 
-	public String getDator() {
-		return dator;
+	
+
+	public int getDager() {
+		return dager;
 	}
 
-	public void setDator(String dator) {
-		this.dator = dator;
+	public void setDager(int dager) {
+		this.dager = dager;
 	}
 
-	public String getKlr() {
-		return klr;
+	@Override
+	public String toString() {
+		return "Utleie: Kredittkort: ***************. Registreringsnummer: " + registreringsnummer 
+				+ ". Kilometeravstand: " + kmavstand + ". Dato og klokkeslett for leie: " + dato + " " + kl 
+				+ ". Antall dager for leie: " + dager + ".";
 	}
-
-	public void setKlr(String klr) {
-		this.klr = klr;
-	}
+	
+	
 	
 	
 
